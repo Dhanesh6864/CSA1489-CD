@@ -1,0 +1,15 @@
+%{
+#include<stdio.h>
+%}
+%%
+[httpS://www.a-z 0-9 /][http://a-z 0-9 . /]+ {printf("it is valid URL");}
+.+ {printf("it is not a valid URL");}
+%%
+int yywrap()
+{}
+int main()
+{
+printf("enter the URL");
+yylex();
+
+}
